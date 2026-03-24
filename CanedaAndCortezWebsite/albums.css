@@ -1,0 +1,63 @@
+.album-grid {display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    padding: 60px;}
+
+.album {position: relative;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 20px;
+    background: rgba(255, 192, 203, 0.08);
+    backdrop-filter: blur(10px);
+    transition: 0.4s;}
+
+.album img {width: 140px;
+    height: 140px;
+    border-radius: 15px;
+    transition: 0.4s;}
+
+.album p {margin-top: 10px;
+    font-size: 13px;
+    color: white;
+    opacity: 0.9;
+    transition: 0.3s;}
+
+.album:hover {transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255,105,180,0.4);}
+
+.album:hover img {box-shadow: 0 0 25px #ff69b4;}
+
+.album:hover p {color: #ffb6c1;
+    letter-spacing: 1px;}
+
+.album::after {content: "";
+    position: absolute;
+    width: 80%;
+    height: 20px;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,105,180,0.3);
+    filter: blur(15px);
+    opacity: 0;
+    transition: 0.4s;}
+
+.album:hover::after {opacity: 1;}
+
+.album::before {
+    content: "Tap to Explore";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff1493;
+    color: white;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.album:hover::before {
+    opacity: 1;}
